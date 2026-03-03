@@ -1,0 +1,721 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Prizma Shrestha | Portfolio</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Playfair+Display:wght@600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="library/font-awesome/css/all.min.css" />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Poppins", "DM Sans", sans-serif;
+        scroll-behavior: smooth;
+      }
+      body {
+        font-size: 18px;
+        line-height: 1.7;
+        background: linear-gradient(135deg, #fff5f9, #ffe0f0, #ffd4e5);
+        background-attachment: fixed;
+        color: #333;
+      }
+      nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px 8%;
+        position: fixed;
+        width: 100%;
+        top: 0;
+        background: rgba(255, 255, 255, 0.85);
+        backdrop-filter: blur(15px);
+        border-bottom: 1px solid rgba(219, 112, 147, 0.2);
+        z-index: 1000;
+      }
+      nav h1 {
+        font-size: 26px;
+        font-weight: 700;
+        color: #d97fa8;
+      }
+      nav ul {
+        display: flex;
+        list-style: none;
+      }
+      nav ul li {
+        margin-left: 35px;
+      }
+      nav ul li a {
+        text-decoration: none;
+        color: #555;
+        font-weight: 500;
+        font-size: 16px;
+        transition: 0.3s;
+      }
+      nav ul li a:hover {
+        color: #d97fa8;
+      }
+      .hero {
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding: 0 20px;
+      }
+      .hero h2 {
+        font-size: 48px;
+        font-weight: 700;
+        color: #4a4a4a;
+        font-family: "Playfair Display", serif;
+      }
+      .hero span {
+        color: #d97fa8;
+      }
+      .hero p {
+        margin-top: 20px;
+        max-width: 700px;
+        font-size: 18px;
+      }
+      section {
+        padding: 110px 8%;
+      }
+      .section-title {
+        text-align: center;
+        margin-bottom: 60px;
+        font-size: 36px;
+        font-weight: 600;
+        color: #d97fa8;
+        font-family: "Playfair Display", serif;
+      }
+      .glass {
+        background: rgba(255, 255, 255, 0.6);
+        backdrop-filter: blur(20px);
+        border-radius: 25px;
+        padding: 35px;
+        border: 1px solid rgba(219, 112, 147, 0.2);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+        transition: 0.4s;
+      }
+      .glass:hover {
+        transform: translateY(-10px);
+        box-shadow:
+          0 15px 40px rgba(219, 112, 147, 0.4),
+          0 0 20px rgba(255, 20, 147, 0.5);
+        border: 1px solid rgba(255, 20, 147, 0.8);
+      }
+      .skills-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 30px;
+      }
+      .skill-card {
+        text-align: center;
+        padding: 25px;
+        background: rgba(255, 255, 255, 0.6);
+        backdrop-filter: blur(20px);
+        border-radius: 20px;
+        border: 1px solid rgba(219, 112, 147, 0.2);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+        transition: 0.4s;
+      }
+      .skill-card:hover {
+        transform: translateY(-8px);
+        box-shadow:
+          0 15px 40px rgba(219, 112, 147, 0.4),
+          0 0 20px rgba(255, 20, 147, 0.5);
+        border: 1px solid rgba(255, 20, 147, 0.8);
+      }
+      .skill-icon {
+        height: 80px;
+        margin: 0 auto 15px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .skill-icon img {
+        max-width: 100%;
+        max-height: 100%;
+        object-fit: contain;
+      }
+      .skill-name {
+        font-weight: 600;
+        margin-top: 15px;
+        color: #d97fa8;
+      }
+      .progress {
+        height: 8px;
+        background: #f0e6f0;
+        border-radius: 10px;
+        margin-top: 12px;
+        overflow: hidden;
+      }
+      .progress-bar {
+        height: 100%;
+        background: linear-gradient(90deg, #d97fa8, #c97fa0);
+        animation: load 2s forwards;
+      }
+      .html {
+        width: 95%;
+      }
+      .js {
+        width: 85%;
+      }
+      .python {
+        width: 90%;
+      }
+      .c {
+        width: 80%;
+      }
+      @keyframes load {
+        from {
+          width: 0;
+        }
+      }
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 35px;
+      }
+      .project-card {
+        overflow: hidden;
+        border-radius: 20px;
+        background: rgba(255, 255, 255, 0.6);
+        backdrop-filter: blur(20px);
+        border: 1px solid rgba(219, 112, 147, 0.2);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+        transition: 0.4s;
+      }
+      .project-card:hover {
+        transform: translateY(-10px);
+        box-shadow:
+          0 15px 40px rgba(219, 112, 147, 0.4),
+          0 0 20px rgba(255, 20, 147, 0.5);
+        border: 1px solid rgba(255, 20, 147, 0.8);
+      }
+      .project-image {
+        width: 100%;
+        height: 220px;
+        object-fit: cover;
+        display: block;
+      }
+      .project-info {
+        padding: 25px;
+      }
+      .project-info h3 {
+        color: #d97fa8;
+        margin-bottom: 10px;
+        font-family: "Playfair Display", serif;
+        font-size: 24px;
+      }
+      .project-info p {
+        font-size: 18px;
+        line-height: 1.6;
+        color: #333;
+      }
+      .project-features {
+        margin: 12px 0 16px 0;
+        padding-left: 18px;
+      }
+      .project-features li {
+        margin: 6px 0;
+        color: #444;
+        font-size: 16px;
+        line-height: 1.45;
+      }
+      .project-actions {
+        display: flex;
+        gap: 12px;
+        margin-top: 12px;
+      }
+      .btn {
+        display: inline-block;
+        padding: 10px 16px;
+        border-radius: 10px;
+        text-decoration: none;
+        font-weight: 600;
+        background: linear-gradient(135deg, #d97fa8, #c97aa0);
+        color: #fff;
+      }
+      .btn.outline {
+        background: transparent;
+        color: #d97fa8;
+        border: 1px solid rgba(219, 112, 147, 0.4);
+      }
+      .contact-info {
+        margin-bottom: 30px;
+      }
+      .contact-item {
+        display: flex;
+        align-items: center;
+        margin: 15px 0;
+        font-size: 16px;
+      }
+      .contact-item i {
+        width: 30px;
+        height: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: linear-gradient(135deg, #d97fa8, #c97aa0);
+        color: white;
+        border-radius: 50%;
+        margin-right: 15px;
+        font-size: 16px;
+      }
+      .contact-item a {
+        color: #d97fa8;
+        text-decoration: none;
+        transition: 0.3s;
+      }
+      .contact-item a:hover {
+        color: #b06a8f;
+        text-decoration: underline;
+      }
+      form {
+        margin-top: 25px;
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+      }
+      input,
+      textarea {
+        padding: 14px;
+        border: none;
+        border-radius: 12px;
+        background: rgba(255, 255, 255, 0.8);
+        color: #333;
+        font-size: 17px;
+        border: 1px solid rgba(219, 112, 147, 0.25);
+        transition: 0.3s;
+      }
+      input:focus,
+      textarea:focus {
+        outline: none;
+        border: 1px solid rgba(219, 112, 147, 0.5);
+        box-shadow: 0 0 10px rgba(219, 112, 147, 0.2);
+      }
+      input::placeholder,
+      textarea::placeholder {
+        color: #aaa;
+      }
+      button {
+        padding: 12px 18px;
+        border: none;
+        border-radius: 30px;
+        background: linear-gradient(135deg, #d97fa8, #c97aa0);
+        color: #fff;
+        font-weight: 700;
+        font-size: 16px;
+        cursor: pointer;
+        transition: 0.3s;
+      }
+      button:hover {
+        transform: scale(1.05);
+        box-shadow: 0 10px 25px rgba(219, 112, 147, 0.25);
+      }
+
+      /* LOGIN BUTTON SECTION */
+      .login-section {
+        text-align: center;
+        margin-top: 40px;
+        padding-top: 30px;
+        border-top: 1px solid rgba(219, 112, 147, 0.2);
+      }
+      .login-section p {
+        font-size: 15px;
+        color: #999;
+        margin-bottom: 18px;
+        font-style: italic;
+      }
+      .login-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        padding: 14px 42px;
+        background: linear-gradient(135deg, #d97fa8, #c97aa0);
+        color: #fff;
+        font-size: 16px;
+        font-weight: 700;
+        border-radius: 50px;
+        text-decoration: none;
+        letter-spacing: 0.5px;
+        box-shadow: 0 8px 25px rgba(217, 127, 168, 0.45);
+        transition: all 0.3s ease;
+        position: relative;
+        overflow: hidden;
+      }
+      .login-btn::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          rgba(255, 255, 255, 0.25),
+          transparent
+        );
+        transition: 0.5s;
+      }
+      .login-btn:hover::before {
+        left: 100%;
+      }
+      .login-btn:hover {
+        transform: translateY(-3px);
+        box-shadow:
+          0 12px 35px rgba(217, 127, 168, 0.6),
+          0 0 20px rgba(255, 20, 147, 0.3);
+      }
+      .login-btn:active {
+        transform: translateY(0);
+      }
+
+      footer {
+        text-align: center;
+        padding: 40px;
+        background: rgba(255, 255, 255, 0.7);
+        backdrop-filter: blur(10px);
+        border-top: 1px solid rgba(219, 112, 147, 0.2);
+        margin-top: 60px;
+        font-size: 14px;
+        color: #666;
+      }
+      @media (max-width: 768px) {
+        .hero h2 {
+          font-size: 42px;
+        }
+        .section-title {
+          font-size: 32px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <h1>Prizma Shrestha</h1>
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <!-- ===== LOGIN BUTTON ===== -->
+    <div class="login-section" style="position: absolute; top: 45px; right: 60px; z-index: 1010;">
+      <a href="portal.html" class="login-btn">
+        <i class="fas fa-sign-in-alt"></i>
+        Login
+      </a>
+    </div>
+
+    <div class="hero">
+      <h2>Hello, I'm <span>Prizma</span></h2>
+      <p>
+        Computer Engineering student passionate about AI and software
+        development, building practical real-world solutions through code.
+      </p>
+    </div>
+
+    <section id="about">
+      <h2 class="section-title">
+        <i class="fas fa-user-circle" style="margin-right: 15px"></i>About Me
+      </h2>
+      <div class="glass">
+        <p>
+          <i
+            class="fas fa-quote-left"
+            style="margin-right: 10px; color: #d97fa8; opacity: 0.6"
+          ></i
+          >I'm a Computer Engineering student who genuinely enjoys building
+          things with code. I like working on real projects, especially in AI
+          and software development, where I can turn ideas into something
+          practical. At the same time, I believe life isn't just about coding —
+          having fun, staying curious, and keeping a healthy balance matters
+          just as much.<i
+            class="fas fa-quote-right"
+            style="margin-left: 10px; color: #d97fa8; opacity: 0.6"
+          ></i>
+        </p>
+      </div>
+    </section>
+
+    <section id="skills">
+      <h2 class="section-title">
+        <i class="fas fa-code" style="margin-right: 15px"></i>Skills
+      </h2>
+      <div class="skills-grid">
+        <div class="skill-card">
+          <div class="skill-icon">
+            <i class="fab fa-html5" style="font-size: 60px; color: #e84c3d"></i>
+          </div>
+          <div class="skill-name">HTML</div>
+          <div class="progress"><div class="progress-bar html"></div></div>
+        </div>
+        <div class="skill-card">
+          <div class="skill-icon">
+            <i
+              class="fab fa-css3-alt"
+              style="font-size: 60px; color: #1572b6"
+            ></i>
+          </div>
+          <div class="skill-name">CSS</div>
+          <div class="progress"><div class="progress-bar html"></div></div>
+        </div>
+        <div class="skill-card">
+          <div class="skill-icon">
+            <i
+              class="fab fa-js-square"
+              style="font-size: 60px; color: #f7df1e"
+            ></i>
+          </div>
+          <div class="skill-name">JavaScript</div>
+          <div class="progress"><div class="progress-bar js"></div></div>
+        </div>
+        <div class="skill-card">
+          <div class="skill-icon">
+            <i
+              class="fab fa-python"
+              style="font-size: 60px; color: #366994"
+            ></i>
+          </div>
+          <div class="skill-name">Python</div>
+          <div class="progress"><div class="progress-bar python"></div></div>
+        </div>
+        <div class="skill-card">
+          <div class="skill-icon">
+            <i class="fas fa-code" style="font-size: 60px; color: #00569c"></i>
+          </div>
+          <div class="skill-name">C</div>
+          <div class="progress"><div class="progress-bar c"></div></div>
+        </div>
+        <div class="skill-card">
+          <div class="skill-icon">
+            <i
+              class="fas fa-plus"
+              style="
+                font-size: 50px;
+                color: #00599c;
+                position: relative;
+                left: 10px;
+              "
+            ></i>
+            <i
+              class="fas fa-plus"
+              style="
+                font-size: 50px;
+                color: #00599c;
+                position: relative;
+                right: 10px;
+              "
+            ></i>
+          </div>
+          <div class="skill-name">C++</div>
+          <div class="progress"><div class="progress-bar c"></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects">
+      <h2 class="section-title">
+        <i class="fas fa-project-diagram" style="margin-right: 15px"></i
+        >Projects
+      </h2>
+      <div class="grid">
+        <div class="project-card">
+          <img
+            src="img/face_emotion_detection.jpg"
+            alt="Face Emotion Detection"
+            class="project-image"
+          />
+          <div class="project-info">
+            <h3>
+              <i
+                class="fas fa-brain"
+                style="margin-right: 10px; color: #d97fa8"
+              ></i
+              >Face Emotion Detection
+            </h3>
+            <p>
+              An AI project that analyses facial expressions to infer emotions
+              in real-time.
+            </p>
+            <ul class="project-features">
+              <li>Real-time webcam emotion detection</li>
+              <li>Uses CNN + pre-processing for robust detection</li>
+              <li>Realtime visualization and logging</li>
+            </ul>
+            <div class="project-actions"></div>
+          </div>
+        </div>
+        <div class="project-card">
+          <img
+            src="img/pet_recommendation-system.jpg"
+            alt="Pet Recommendation System"
+            class="project-image"
+          />
+          <div class="project-info">
+            <h3>
+              <i
+                class="fas fa-paw"
+                style="margin-right: 10px; color: #d97fa8"
+              ></i
+              >Pet Recommendation System
+            </h3>
+            <p>
+              Personalized pet recommendation engine matching pets to user
+              lifestyle and constraints.
+            </p>
+            <ul class="project-features">
+              <li>Interactive quiz to capture user preferences</li>
+              <li>SBERT embeddings for semantic pet/profile matching</li>
+              <li>KNN nearest-neighbor scoring to rank recommendations</li>
+            </ul>
+            <div class="project-actions"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="education">
+      <h2 class="section-title">
+        <i class="fas fa-graduation-cap" style="margin-right: 15px"></i
+        >Education
+      </h2>
+      <div class="grid">
+        <div class="glass">
+          <h3>
+            <i
+              class="fas fa-school"
+              style="margin-right: 10px; color: #d97fa8"
+            ></i
+            >I.J Pioneer Higher Secondary School — Schooling
+          </h3>
+          <p>
+            <i
+              class="fas fa-map-pin"
+              style="margin-right: 8px; color: #d97fa8"
+            ></i
+            >Hattiban, Lalitpur
+          </p>
+        </div>
+        <div class="glass">
+          <h3>
+            <i
+              class="fas fa-book"
+              style="margin-right: 10px; color: #d97fa8"
+            ></i
+            >Prasadi Academy (+2 Science) — Intermediate
+          </h3>
+          <p>
+            <i
+              class="fas fa-map-pin"
+              style="margin-right: 8px; color: #d97fa8"
+            ></i
+            >Taflon, Lalitpur
+          </p>
+        </div>
+        <div class="glass">
+          <h3>
+            <i
+              class="fas fa-university"
+              style="margin-right: 10px; color: #d97fa8"
+            ></i
+            >Kantipur Engineering College — Bachelors
+          </h3>
+          <p>
+            <i
+              class="fas fa-graduation-cap"
+              style="margin-right: 8px; color: #d97fa8"
+            ></i
+            >Bachelors in Computer Engineering (Ongoing)<br />
+            <i
+              class="fas fa-map-pin"
+              style="margin-right: 8px; color: #d97fa8"
+            ></i
+            >Dhapakhel, Lalitpur
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <h2 class="section-title">Contact Me</h2>
+      <div class="glass">
+        <div class="contact-info">
+          <div class="contact-item">
+            <i class="fas fa-map-marker-alt"></i>
+            <span><strong>Address:</strong> Lagankhel, Lalitpur</span>
+          </div>
+          <div class="contact-item">
+            <i class="fas fa-phone-alt"></i>
+            <span><strong>Phone:</strong> 9803071038</span>
+          </div>
+          <div class="contact-item">
+            <i class="fas fa-envelope"></i>
+            <span
+              ><strong>Email:</strong>
+              <a href="mailto:prizmashrestha0425@gmail.com"
+                >prizmashrestha0425@gmail.com</a
+              ></span
+            >
+          </div>
+          <div class="contact-item">
+            <i class="fab fa-github"></i>
+            <span
+              ><strong>GitHub:</strong>
+              <a href="https://github.com/prizma03" target="_blank"
+                >github.com/prizma03</a
+              ></span
+            >
+          </div>
+        </div>
+
+        <form>
+          <input type="text" placeholder="Your Name" />
+          <input type="email" placeholder="Your Email" />
+          <textarea rows="4" placeholder="Your Message"></textarea>
+          <button type="submit">Send Message</button>
+        </form>
+
+        
+      </div>
+    </section>
+
+    <footer>© 2026 Prizma Shrestha | Designed by Prizma Shrestha</footer>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const cards = document.querySelectorAll(".project-card");
+        if ("IntersectionObserver" in window) {
+          const obs = new IntersectionObserver(
+            (entries, observer) => {
+              entries.forEach((e) => {
+                if (e.isIntersecting) {
+                  e.target.classList.add("visible");
+                  observer.unobserve(e.target);
+                }
+              });
+            },
+            { threshold: 0.15 },
+          );
+          cards.forEach((c) => obs.observe(c));
+        } else {
+          cards.forEach((c) => c.classList.add("visible"));
+        }
+      });
+    </script>
+  </body>
+</html>
